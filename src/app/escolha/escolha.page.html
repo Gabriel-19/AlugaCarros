@@ -5,9 +5,33 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item (click)="voltar()">
-      <h2>Voltar</h2>
-    </ion-item>
-  </ion-list>
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let foto of carro.fotos">
+      <img src="{{foto}}"/>
+    </ion-slide>
+  </ion-slides>
+  <ion-item-group>
+    <ion-item-divider color="light">
+      <ion-icon name="car"></ion-icon>
+      Veículo
+    </ion-item-divider>
+    <ion-item>{{carro.nome}}</ion-item>
+    <ion-item>R$ {{carro.preco}}</ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="success">
+      <ion-icon name="options"></ion-icon>
+      Acessórios
+    </ion-item-divider>
+    <ion-item>Acessório 1</ion-item>
+    <ion-item>Acessório 2</ion-item>
+  </ion-item-group>
+  <ion-item-divider color="danger">
+    Total: R$ 1000
+  </ion-item-divider>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="voltar()">
+      <ion-icon name="arrow-dropright"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
