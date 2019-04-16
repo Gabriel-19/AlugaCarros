@@ -19,14 +19,19 @@
     <ion-item>R$ {{carro.preco}}</ion-item>
   </ion-item-group>
   <ion-item-group>
-    <ion-item-divider color="success">
+    <ion-item-divider color="light">
       <ion-icon name="options"></ion-icon>
       Acessórios
     </ion-item-divider>
-    <ion-item>Acessório 1</ion-item>
-    <ion-item>Acessório 2</ion-item>
+    <ion-item *ngFor="let acessorio of acessorios">
+      <ion-label>
+        <h2>{{acessorio.nome}}</h2>
+        <h4>R$ {{acessorio.preco}}</h4>
+      </ion-label>
+      <ion-toggle color="light"></ion-toggle>
+    </ion-item>
   </ion-item-group>
-  <ion-item-divider color="danger">
+  <ion-item-divider color="light">
     Total: R$ 1000
   </ion-item-divider>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

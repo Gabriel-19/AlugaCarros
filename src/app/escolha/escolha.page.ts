@@ -12,6 +12,8 @@ export class EscolhaPage implements OnInit {
 
   private carro: Carro
 
+  private acessorios =  [];
+
   constructor(private navCtrl: NavController,
     private activatedRoute: ActivatedRoute) { }
 
@@ -22,6 +24,12 @@ export class EscolhaPage implements OnInit {
 
         console.log("O carro que chegou na pagina de escolha é: " + this.carro.nome);
       });
+
+    this.acessorios = [
+      {nome: "Freio ABS", preco:800},
+      {nome: "Ar-Condicionado", preco:1000},
+      {nome: "MP3 Player", preco:500},
+    ];
   }
 
   voltar(){
